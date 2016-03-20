@@ -56,10 +56,11 @@ Window {
                     anchors.verticalCenter: parent.verticalCenter
                     onLinesChanged: {
                         var l =  paymentsList.lines;
-                        if (l==0) {
+                        if (l==0)
+                        {
                             for(var i = paymentsList.children.length; i > 0 ; i--) {
                                     console.log("destroying: " + i)
-                                    contentGrid.children[i-1].destroy()
+                                    paymentsList.children[i-1].destroy()
                             }
                         }
 
@@ -67,11 +68,7 @@ Window {
                                     'import QtQuick 2.0; Text { objectName:"paymentLine'+l+'"; text:"exexe"; y:'+20*l+' }',
                                     paymentsList,
                                     'paymentLine'+l);
-                        //Qt.createQmlObject(sc, user_info_view_rectangle, 'ouo1u'+l);
-                        //Qt.createQmlObject(sc, user_info_view_rectangle, 'ouo2u'+l);
-                        //Qt.createQmlObject(sc, user_info_view_rectangle, 'ouo3u'+l);
-                        //Qt.createQmlObject(sc, user_info_view_rectangle, 'ouo4u'+l);
-                        //Qt.createQmlObject(sc, user_info_view_rectangle, 'ouo5u'+l);
+
                     }
                 }
 

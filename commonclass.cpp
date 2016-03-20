@@ -90,6 +90,7 @@ void CommonClass::searchByCardId(QString card_id )
            this->qml_object->findChild<QObject*>("iSumm")->setProperty("discount",discount);
            this->qml_object->findChild<QObject*>("search_view")->setProperty("visible",false);
            this->qml_object->findChild<QObject*>("user_info_view")->setProperty("visible",true);
+           this->qml_object->findChild<QObject*>("showSearchWindow")->setProperty("visible",true);
            this->qml_object->findChild<QObject*>("user_info_caption")->setProperty("text",view_title);
            this->qml_object->findChild<QObject*>("add_payment_button")->setProperty("card_id",card_id);
            this->log(view_title);
